@@ -718,17 +718,25 @@
 			buildSettings = {
 				ARCHS = (
 					x86_64,
-					i386,
 					arm64,
 					armv7,
 				);
+				"ARCHS[sdk=iphoneos*]" = (
+					arm64,
+					armv7,
+				);
+				"ARCHS[sdk=macosx*]" = "$(ARCHS_STANDARD)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = peertalk/prefix.pch;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = peertalk;
+				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
-				VALID_ARCHS = "i386 x86_64 arm64 armv7s armv7";
+				VALID_ARCHS = "x86_64 arm64 armv7s armv7";
+				"VALID_ARCHS[sdk=iphoneos*]" = "arm64 armv7s armv7";
+				"VALID_ARCHS[sdk=macosx*]" = x86_64;
 			};
 			name = Debug;
 		};
@@ -737,17 +745,25 @@
 			buildSettings = {
 				ARCHS = (
 					x86_64,
-					i386,
 					arm64,
 					armv7,
 				);
+				"ARCHS[sdk=iphoneos*]" = (
+					arm64,
+					armv7,
+				);
+				"ARCHS[sdk=macosx*]" = "$(ARCHS_STANDARD)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = peertalk/prefix.pch;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = peertalk;
+				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
-				VALID_ARCHS = "i386 x86_64 arm64 armv7s armv7";
+				VALID_ARCHS = "x86_64 arm64 armv7s armv7";
+				"VALID_ARCHS[sdk=iphoneos*]" = "arm64 armv7s armv7";
+				"VALID_ARCHS[sdk=macosx*]" = x86_64;
 			};
 			name = Release;
 		};
