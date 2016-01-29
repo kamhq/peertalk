@@ -72,6 +72,7 @@ static const uint8_t kUserInfoKey;
 
 - (id)initWithProtocol:(PTProtocol*)protocol delegate:(id<PTChannelDelegate>)delegate {
   if (!(self = [super init])) return nil;
+    NSLog(@"initialized channel with protocol '%@' and delegate '%@': %@", protocol, delegate, self);
   protocol_ = protocol;
   self.delegate = delegate;
   return self;
@@ -80,6 +81,7 @@ static const uint8_t kUserInfoKey;
 
 - (id)initWithProtocol:(PTProtocol*)protocol {
   if (!(self = [super init])) return nil;
+    NSLog(@"initialized channel with protocol '%@': %@", protocol, self);
   protocol_ = protocol;
   return self;
 }
@@ -91,6 +93,9 @@ static const uint8_t kUserInfoKey;
 
 
 - (void)dealloc {
+    NSLog(@"dealloc channel: %@", self);
+    [self close];
+    
 #if PT_DISPATCH_RETAIN_RELEASE
   if (dispatchObj_channel_) dispatch_release(dispatchObj_channel_);
   else if (dispatchObj_source_) dispatch_release(dispatchObj_source_);
@@ -119,6 +124,7 @@ static const uint8_t kUserInfoKey;
 
 - (void)setConnState:(char)connState {
   connState_ = connState;
+    NSLog(@"changed channel state: %@", self);
 }
 
 
@@ -132,7 +138,7 @@ static const uint8_t kUserInfoKey;
     if (prevChannel) dispatch_release(prevChannel);
 #endif
     if (!dispatchObj_channel_ && !dispatchObj_source_) {
-      connState_ = kConnStateNone;
+      [self setConnState:kConnStateNone];
     }
   }
 }
@@ -148,7 +154,7 @@ static const uint8_t kUserInfoKey;
     if (prevSource) dispatch_release(prevSource);
 #endif
     if (!dispatchObj_channel_ && !dispatchObj_source_) {
-      connState_ = kConnStateNone;
+      [self setConnState:kConnStateNone];
     }
   }
 }
@@ -196,13 +202,13 @@ static const uint8_t kUserInfoKey;
     if (callback) callback([NSError errorWithDomain:NSPOSIXErrorDomain code:EPERM userInfo:nil]);
     return;
   }
-  connState_ = kConnStateConnecting;
+  [self setConnState:kConnStateConnecting];
   [usbHub connectToDevice:deviceID port:port onStart:^(NSError *err, dispatch_io_t dispatchChannel) {
     NSError *error = err;
     if (!error) {
       [self startReadingFromConnectedChannel:dispatchChannel error:&error];
     } else {
-      connState_ = kConnStateNone;
+      [self setConnState:kConnStateNone];
     }
     if (callback) callback(error);
   } onEnd:^(NSError *error) {
@@ -220,7 +226,7 @@ static const uint8_t kUserInfoKey;
     if (callback) callback([NSError errorWithDomain:NSPOSIXErrorDomain code:EPERM userInfo:nil], nil);
     return;
   }
-  connState_ = kConnStateConnecting;
+  [self setConnState:kConnStateConnecting];
   
   int error = 0;
   
@@ -250,7 +256,7 @@ static const uint8_t kUserInfoKey;
   
   // int socket, const struct sockaddr *address, socklen_t address_len
   if (connect(fd, (const struct sockaddr *)&addr, addr.sin_len) == -1) {
-    //perror("connect");
+//    perror("connect");
     error = errno;
     close(fd);
     if (callback) callback([[NSError alloc] initWithDomain:NSPOSIXErrorDomain code:error userInfo:nil], nil);
@@ -364,7 +370,7 @@ static const uint8_t kUserInfoKey;
   dispatch_resume(dispatchObj_source_);
   //NSLog(@"%@ opened on fd #%d", self, fd);
   
-  connState_ = kConnStateListening;
+  [self setConnState:kConnStateListening];
   if (callback) callback(nil);
 }
 
@@ -426,7 +432,6 @@ static const uint8_t kUserInfoKey;
 
 #pragma mark - Closing the channel
 
-
 - (void)close {
   if ((connState_ == kConnStateConnecting || connState_ == kConnStateConnected) && dispatchObj_channel_) {
     dispatch_io_close(dispatchObj_channel_, DISPATCH_IO_STOP);
@@ -435,7 +440,6 @@ static const uint8_t kUserInfoKey;
     dispatch_source_cancel(dispatchObj_source_);
   }
 }
-
 
 - (void)cancel {
   if ((connState_ == kConnStateConnecting || connState_ == kConnStateConnected) && dispatchObj_channel_) {
@@ -461,7 +465,7 @@ static const uint8_t kUserInfoKey;
     [self setDispatchChannel:channel];
   }
   
-  connState_ = kConnStateConnected;
+  [self setConnState:kConnStateConnected];
   
   // helper
   BOOL(^handleError)(NSError*,BOOL) = ^BOOL(NSError *error, BOOL isEOS) {
