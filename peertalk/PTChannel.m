@@ -72,7 +72,6 @@ static const uint8_t kUserInfoKey;
 
 - (id)initWithProtocol:(PTProtocol*)protocol delegate:(id<PTChannelDelegate>)delegate {
   if (!(self = [super init])) return nil;
-    NSLog(@"initialized channel with protocol '%@' and delegate '%@': %@", protocol, delegate, self);
   protocol_ = protocol;
   self.delegate = delegate;
   return self;
@@ -81,7 +80,6 @@ static const uint8_t kUserInfoKey;
 
 - (id)initWithProtocol:(PTProtocol*)protocol {
   if (!(self = [super init])) return nil;
-    NSLog(@"initialized channel with protocol '%@': %@", protocol, self);
   protocol_ = protocol;
   return self;
 }
@@ -93,7 +91,6 @@ static const uint8_t kUserInfoKey;
 
 
 - (void)dealloc {
-    NSLog(@"dealloc channel: %@", self);
     [self close];
     
 #if PT_DISPATCH_RETAIN_RELEASE
@@ -124,7 +121,7 @@ static const uint8_t kUserInfoKey;
 
 - (void)setConnState:(char)connState {
   connState_ = connState;
-    NSLog(@"changed channel state: %@", self);
+//    NSLog(@"changed channel state: %@", self);
 }
 
 
