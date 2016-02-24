@@ -225,13 +225,10 @@ static const uint8_t kUserInfoKey;
   }
   [self setConnState:kConnStateConnecting];
   
-  int error = 0;
-  
   // Create socket
   dispatch_fd_t fd = socket(AF_INET, SOCK_STREAM, 0);
   if (fd == -1) {
     perror("socket(AF_INET, SOCK_STREAM, 0) failed");
-    error = errno;
     if (callback) callback([[NSError alloc] initWithDomain:NSPOSIXErrorDomain code:errno userInfo:nil], nil);
     return;
   }
@@ -254,9 +251,8 @@ static const uint8_t kUserInfoKey;
   // int socket, const struct sockaddr *address, socklen_t address_len
   if (connect(fd, (const struct sockaddr *)&addr, addr.sin_len) == -1) {
 //    perror("connect");
-    error = errno;
     close(fd);
-    if (callback) callback([[NSError alloc] initWithDomain:NSPOSIXErrorDomain code:error userInfo:nil], nil);
+    if (callback) callback([[NSError alloc] initWithDomain:NSPOSIXErrorDomain code:errno userInfo:nil], nil);
     return;
   }
   
@@ -300,7 +296,7 @@ static const uint8_t kUserInfoKey;
     return;
   }
   
-  assert(dispatchObj_source_ == nil);
+//  assert(dispatchObj_source_ == nil);
   
   // Create socket
   dispatch_fd_t fd = socket(AF_INET, SOCK_STREAM, 0);
