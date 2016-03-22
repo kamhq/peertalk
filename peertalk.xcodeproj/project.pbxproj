@@ -387,8 +387,8 @@
 		6A88FA27150D613800FC3647 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastTestingUpgradeCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastTestingUpgradeCheck = 0730;
+				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = 6A88FA2A150D613800FC3647 /* Build configuration list for PBXProject "peertalk" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -716,11 +716,6 @@
 		6A88FA57150D613800FC3647 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					arm64,
-					armv7,
-				);
 				"ARCHS[sdk=iphoneos*]" = (
 					arm64,
 					armv7,
@@ -744,11 +739,6 @@
 		6A88FA58150D613800FC3647 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					arm64,
-					armv7,
-				);
 				"ARCHS[sdk=iphoneos*]" = (
 					arm64,
 					armv7,
