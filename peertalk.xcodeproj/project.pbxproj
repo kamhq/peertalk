@@ -388,7 +388,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 			};
 			buildConfigurationList = 6A88FA2A150D613800FC3647 /* Build configuration list for PBXProject "peertalk" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -614,7 +614,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Peertalk iOS Example/Peertalk iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "Peertalk iOS Example/Peertalk iOS Example-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.rsms.peertalk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -634,7 +634,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Peertalk iOS Example/Peertalk iOS Example-Prefix.pch";
 				INFOPLIST_FILE = "Peertalk iOS Example/Peertalk iOS Example-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.rsms.peertalk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
