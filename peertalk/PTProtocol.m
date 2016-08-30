@@ -243,8 +243,11 @@ static void _release_queue_local_protocol(void *objcobj) {
 - (void)readPayloadOfSize:(size_t)payloadSize overChannel:(dispatch_io_t)channel callback:(void(^)(NSError *error, dispatch_data_t contiguousData, const uint8_t *buffer, size_t bufferSize))callback {
   __block dispatch_data_t allData = NULL;
   dispatch_io_read(channel, 0, payloadSize, queue_, ^(bool done, dispatch_data_t data, int error) {
-    //NSLog(@"dispatch_io_read: done=%d data=%p error=%d", done, data, error);
-    size_t dataSize = dispatch_data_get_size(data);
+    
+    size_t dataSize = 0;
+    if (data != NULL) {
+      dataSize = dispatch_data_get_size(data);
+    }
     
     if (dataSize) {
       if (!allData) {
