@@ -1,2 +1,15 @@
-xcuserdata
 .DS_Store
+*.log
+*.sock*
+*.pyo
+*.pyc
+*.crash
+*.so
+*.o
+*.a
+* copy.*
+._*
+*.patch
+*.diff
+
+xcuserdata
