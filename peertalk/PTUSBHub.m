@@ -425,7 +425,7 @@ static NSString *kPlistPacketTypeConnect = @"Connect";
       return;
     }
     // TODO: timeout un-triggered callbacks in responseQueue_
-      if (!self->responseQueue_) responseQueue_ = [NSMutableDictionary new];
+      if (!self->responseQueue_) self->responseQueue_ = [NSMutableDictionary new];
       [self->responseQueue_ setObject:callback forKey:[NSNumber numberWithUnsignedInt:tag]];
   }];
   
@@ -504,7 +504,7 @@ static NSString *kPlistPacketTypeConnect = @"Connect";
     
     // Read rest of the incoming usbmux_packet_t
     off_t offset = sizeof(ref_upacket.size);
-      dispatch_io_read(self->channel_, offset, upacket->size - (size_t)offset, queue_, ^(bool done, dispatch_data_t data, int error) {
+      dispatch_io_read(self->channel_, offset, upacket->size - (size_t)offset, self->queue_, ^(bool done, dispatch_data_t data, int error) {
       //NSLog(@"dispatch_io_read X,Y: done=%d data=%p error=%d", done, data, error);
       
       if (!done) {

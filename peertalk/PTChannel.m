@@ -350,7 +350,7 @@ static const uint8_t kUserInfoKey;
       self->dispatchObj_source_ = nil;
     close(fd);
       if (self->delegateFlags_ & kDelegateFlagImplements_ioFrameChannel_didEndWithError) {
-        [self->delegate_ ioFrameChannel:self didEndWithError:endError_];
+          [self->delegate_ ioFrameChannel:self didEndWithError:self->endError_];
           self->endError_ = nil;
     }
   });
@@ -481,7 +481,7 @@ static const uint8_t kUserInfoKey;
     
     if (payloadSize == 0) {
         if (accepted && self->delegate_) {
-        [delegate_ ioFrameChannel:self didReceiveFrameOfType:type tag:tag payload:nil];
+            [self->delegate_ ioFrameChannel:self didReceiveFrameOfType:type tag:tag payload:nil];
       } else {
         // simply ignore the frame
       }
