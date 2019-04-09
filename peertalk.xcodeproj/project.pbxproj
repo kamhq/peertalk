@@ -493,7 +493,7 @@
 			};
 			buildConfigurationList = 6A88FA2A150D613800FC3647 /* Build configuration list for PBXProject "peertalk" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
