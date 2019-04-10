@@ -80,6 +80,9 @@
 
 /* Begin PBXFileReference section */
 		224B4B011F1D1F8E00C86A43 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5A6247AC225DE47B0036F9F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5A6247AD225DE47B0036F9F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		5A6247AE225DE47B0036F9F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		5E2C5023171F46A6008A9752 /* PTPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPrivate.h; sourceTree = "<group>"; };
 		6A0A056E150DB1C10014D424 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A2E8E341527411E001B90E4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -99,7 +102,6 @@
 		6A64AAD3152604D40065BF86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		6A64AAD5152604D40065BF86 /* PTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTAppDelegate.h; sourceTree = "<group>"; };
 		6A64AAD6152604D40065BF86 /* PTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTAppDelegate.m; sourceTree = "<group>"; };
-		6A64AAD9152604D40065BF86 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6A64AAE21526050D0065BF86 /* Peertalk iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Peertalk iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A64AAEB1526050D0065BF86 /* Peertalk iOS Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Peertalk iOS Example-Info.plist"; sourceTree = "<group>"; };
 		6A64AAED1526050D0065BF86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -107,8 +109,6 @@
 		6A64AAF11526050D0065BF86 /* Peertalk iOS Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Peertalk iOS Example-Prefix.pch"; sourceTree = "<group>"; };
 		6A64AAF21526050D0065BF86 /* PTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTAppDelegate.h; sourceTree = "<group>"; };
 		6A64AAF31526050D0065BF86 /* PTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTAppDelegate.m; sourceTree = "<group>"; };
-		6A64AAF61526050D0065BF86 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		6A64AAF91526050D0065BF86 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		6A64AAFB1526050D0065BF86 /* PTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTViewController.h; sourceTree = "<group>"; };
 		6A64AAFC1526050D0065BF86 /* PTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTViewController.m; sourceTree = "<group>"; };
 		6A64AB01152608C80065BF86 /* PTExampleProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTExampleProtocol.h; sourceTree = "<group>"; };
@@ -497,6 +497,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 6A88FA25150D613800FC3647;
 			productRefGroup = 6A88FA31150D613800FC3647 /* Products */;
@@ -659,7 +660,7 @@
 		6A64AAD8152604D40065BF86 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6A64AAD9152604D40065BF86 /* en */,
+				5A6247AC225DE47B0036F9F4 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -675,7 +676,7 @@
 		6A64AAF51526050D0065BF86 /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6A64AAF61526050D0065BF86 /* en */,
+				5A6247AD225DE47B0036F9F4 /* Base */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -683,7 +684,7 @@
 		6A64AAF81526050D0065BF86 /* MainStoryboard_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6A64AAF91526050D0065BF86 /* en */,
+				5A6247AE225DE47B0036F9F4 /* Base */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
