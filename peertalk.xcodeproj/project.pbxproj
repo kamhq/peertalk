@@ -873,7 +873,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = peertalk/prefix.pch;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = peertalk;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PRODUCT_NAME)";
@@ -881,7 +881,6 @@
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				VALID_ARCHS = "x86_64 arm64 armv7s armv7";
 				"VALID_ARCHS[sdk=iphoneos*]" = "arm64 armv7s armv7";
-				"VALID_ARCHS[sdk=macosx*]" = x86_64;
 			};
 			name = Debug;
 		};
@@ -897,7 +896,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = peertalk/prefix.pch;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = peertalk;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PRODUCT_NAME)";
@@ -905,7 +904,6 @@
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				VALID_ARCHS = "x86_64 arm64 armv7s armv7";
 				"VALID_ARCHS[sdk=iphoneos*]" = "arm64 armv7s armv7";
-				"VALID_ARCHS[sdk=macosx*]" = x86_64;
 			};
 			name = Release;
 		};
@@ -1045,7 +1043,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = peertalk/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.rsms.peertalk.Peertalk-iOS";
@@ -1080,7 +1078,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = peertalk/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.rsms.peertalk.Peertalk-iOS";
